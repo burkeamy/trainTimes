@@ -5,7 +5,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/styles/main.css" />
     <script src="https://code.jquery.com/jquery.js"></script>
-  
+    <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 </head>
 <body>
     <header>
@@ -16,7 +17,29 @@
             </div>
         </div>
     </header>
+    <table class="table">
+      <h2>Train Table</h2>
+        <thead>
+          <tr>
+            <th scope="col">Train Name</th>
+            <th scope="col">Destination</th>
+            <th scope="col">Frequency</th>
+            <th scope="col">Next Train</th>
+            <th scope="col">Minutes Away</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+    </table>
     <form>
+      <h2>Add a Train</h2>
             <div class="form-group">
               <label for="trainName">Name of Train</label>
               <input type="text" class="form-control" id="trainName" placeholder="Name of train">
@@ -33,7 +56,7 @@
               <label for="frequency">How often does the train run?</label>
               <input type="text" class="form-control" id="frequency" placeholder="frequency of Train">
             </div>
-            <input class="btn btn-success" type="submit" value="Submit">
+            <input class="btn btn-success" id = "submit" type="submit" value="Submit">
           </form>
     <script src="assets/javascript/main.js"></script>
 </body>

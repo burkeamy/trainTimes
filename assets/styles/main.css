@@ -12,3 +12,10 @@ img {
 form {
     margin: 25px;
 }
+
+h2 {
+    background-color: rgb(24, 24, 136);
+    color: white;
+    margin-top: 15px;
+    text-align: center;
+}
