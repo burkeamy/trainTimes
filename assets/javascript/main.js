@@ -38,35 +38,16 @@ firebase.initializeApp(config);
 
 database.ref().on("child_added", function(snapshot){
   var snap = snapshot.val();
+  var row = $("<tr>)");
 console.log(snap);
-$("#td").html(trainName);
+console.log(snap.trainName);
 
-function renderTrains() {
-/*var tdtn = $("<td>");
-trainName.attr("tdtn");
-trainName.addClass("tdtn");
-$("#tdtn").append(trainName)*/
-
-  for (var i = 0; i<snap.length; i++) {
-    var row = $("<tr>");
-    var tdtn= $("<td>");
-    var tdd= $("<td>");
-    var tdf= $("<td>");
-    var tdnt= $("<td>");
-    var tdma= $("<td>");
-
-    tdtn.text(snap[i].trainName);
-    tdd.text(snap[i].destination);
-    tdf.text(snap[i].frequency);
-    tdnt.text(snap[i].nextTrain);
-    tdma.text(snap[i].minutesAway);
-
-    tdtn.addClass$("td");
-
-    $("#tr").html(tdtn);
-
-    $("td1").addClass("#td");
-  }
-  renderTrains()
-};
-})
+    var tdtn= $("<td>").text(snap.trainName);
+    var tdd= $("<td>").text(snap.destination);
+    var tdf= $("<td>").text(snap.frequency);
+    var tdnt= $("<td>").text(nextTrain);
+    var tdma= $("<td>").text(minAway);
+    
+    row.append(tdtn, tdd, tdf,tdnt, tdma);
+    $("tbody").append(row);
+  })
