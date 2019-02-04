@@ -39,8 +39,29 @@ firebase.initializeApp(config);
 database.ref().on("child_added", function(snapshot){
   var snap = snapshot.val();
   var row = $("<tr>)");
-console.log(snap);
-console.log(snap.trainName);
+
+var firstTrainConverted = moment(snap.firstTrain, "hh:mm a").subtract(1, "years");
+console.log(firstTrainConverted);
+
+// Difference between the times
+var currentTime = moment();
+
+var time = currentTime - firstTrainConverted._d;
+console.log(moment(time).format("minutes"));
+
+
+// Time apart (remainder)
+var tRemainder = time % snap.frequency;
+console.log(tRemainder);
+
+// Minute Until Train
+minAway = snap.frequency - tRemainder;
+console.log("MINUTES TILL TRAIN: " + minAway);
+
+// Next Train
+var nextTrain1 = moment().add(minAway, "minutes");
+console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
+nextTrain = moment(nextTrain1).format("hh:mm");
 
     var tdtn= $("<td>").text(snap.trainName);
     var tdd= $("<td>").text(snap.destination);
